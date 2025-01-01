@@ -1,0 +1,8 @@
+baseURL = 'https://matteocroce.it/'
+languageCode = 'en-us'
+title = 'Matteo Croce personal homepage'
+theme = ['hugo-cloak-email', 'hugo-bearblog']
+disableKinds = ['taxonomy']
+
+[params]
+hideMadeWithLine = true
