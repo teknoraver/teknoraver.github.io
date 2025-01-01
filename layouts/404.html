@@ -1,0 +1,27 @@
+{{ define "title" }}404{{ end }}
+
+{{ define "main" }}
+<style>
+	@keyframes blinker {
+		0% { opacity: 1; }
+		75% { opacity: 1; }
+		76% { opacity: 0; }
+		100% { opacity: 0; }
+	}
+	.blink-css {
+		animation: blinker 1.5s linear infinite normal;
+	}
+</style>
+<h1>404</h1>
+<pre tabindex="0">
+<code>$ .<span class="url">url</span>
+.<span class="url">url</span>: No such file or directory
+$ <span class="blink-css">&#9608;</span>
+</code>
+</pre>
+<script>
+var urls = document.querySelectorAll('.url');
+for (var i = 0; i < urls.length; i++)
+	urls[i].innerText = location.pathname;
+</script>
+{{ end }}
