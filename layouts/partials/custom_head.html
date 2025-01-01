@@ -1,0 +1,35 @@
+<script data-goatcounter="https://stats.matteocroce.it/count" async src="/count.js"></script>
+<style>
+	footer {
+		a {
+			text-decoration: none;
+		}
+
+		img {
+			width: 32px;
+			margin: 5px;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		footer img {
+			filter: invert(1);
+		}
+	}
+	@keyframes blinker {
+		0% {
+			opacity: 1;
+		}
+		75% {
+			opacity: 1;
+		}
+		76% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	blinker, .blink-css {
+		animation: blinker 1.5s linear infinite normal;
+	}
+</style>
