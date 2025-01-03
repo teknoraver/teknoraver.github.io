@@ -4,5 +4,15 @@ title = 'Matteo Croce personal homepage'
 theme = ['hugo-cloak-email', 'hugo-bearblog']
 disableKinds = ['taxonomy']
 
+[menu]
+
+        [[menu.main]]
+        name = "curriculum"
+        URL = "/cv.pdf"
+        weight = 1
+
 [params]
+title = 'Matteo Croce personal homepage'
+favicon = 'imgs/gear.svg'
 hideMadeWithLine = true
+images = ['imgs/matteo.jpg']
