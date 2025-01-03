@@ -3,6 +3,8 @@ title = ''
 date = 2025-01-01T19:10:43+01:00
 description = "My personal website, where I share my thoughts and experiences"
 +++
+<img src="/imgs/matteo.jpg" style="float: right; border-radius: 10px; margin: 0 0 10px 10px; width: 40%;">
+
 Hi there, Internet traveler!  
 Welcome to my little corner of the web.
 

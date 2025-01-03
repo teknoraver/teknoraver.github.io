@@ -1,18 +1,26 @@
 baseURL = 'https://matteocroce.it/'
 languageCode = 'en-us'
 title = 'Matteo Croce personal homepage'
+
 theme = ['hugo-cloak-email', 'hugo-bearblog']
+enableRobotsTXT = true
 disableKinds = ['taxonomy']
 
 [menu]
-
-        [[menu.main]]
-        name = "curriculum"
-        URL = "/cv.pdf"
-        weight = 1
+  [[menu.main]]
+  name = "curriculum"
+  URL = "/cv.pdf"
+  weight = 1
 
 [params]
 title = 'Matteo Croce personal homepage'
+author = 'Matteo (teknoraver) Croce'
+copyright = 'Matteo Croce'
 favicon = 'imgs/gear.svg'
 hideMadeWithLine = true
 images = ['imgs/matteo.jpg']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
