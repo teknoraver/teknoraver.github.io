@@ -1,0 +1,42 @@
+{{ if not (.Page.Scratch.Get "carouselCSS") }}
+{{ .Page.Scratch.Set "carouselCSS" true }}
+<link rel="stylesheet" href="/carousel.css">
+{{ end }}
+{{ $images := .Page.Resources.Match (print (.Get "data")) }}
+{{ $width := (index $images 0).Width }}
+{{ $height := (index $images 0).Height }}
+
+<section class="carousel" style="width: {{ $width }}px; height: {{ $height }}px">
+	<ol class="carousel__viewport">
+		{{ range $index, $slide := $images }}
+		<li id="carousel{{ $.Ordinal }}__slide{{ add $index 1 }}" class="carousel__slide">
+			<img src="{{ $slide }}" alt="" />
+			<div class="carousel__snapper">
+				<a
+					href="#carousel{{ $.Ordinal }}__slide{{ cond (ne $index 0) $index ($images | len) }}"
+					class="carousel__prev"
+					aria-label="Previous slide"
+				></a>
+				<a
+					href="#carousel{{ $.Ordinal }}__slide{{ add (mod (add $index 1) ($images | len)) 1 }}"
+					class="carousel__next"
+					aria-label="Next slide"
+				></a>
+			</div>
+		</li>
+		{{ end }}
+	</ol>
+	<aside class="carousel__navigation">
+		<ol class="carousel__navigation-list">
+			{{ range $index, $slide := $images }}
+			<li class="carousel__navigation-item">
+				<a
+					href="#carousel{{ $.Ordinal }}__slide{{ add $index 1 }}"
+					class="carousel__navigation-button"
+					aria-label="Go to slide {{ add $index 1 }}"
+				></a>
+			</li>
+			{{ end }}
+		</ol>
+	</aside>
+</section>
