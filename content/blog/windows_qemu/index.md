@@ -27,9 +27,7 @@ Put both ISOs in a libvirt pool directory, like */var/lib/libvirt/images/*
 ## Prepare the VM
 Create a new VM via the virt-manager wizard. Select the Windows ISO as install media and select the "Customize configuration before install" option. Be generous with the disk size, we'll find out how to avoid space waste later.
 
-{{< figure src="/blog/windows_qemu/create1.png" >}}
-{{< figure src="/blog/windows_qemu/create2.png" >}}
-{{< figure src="/blog/windows_qemu/create3.png" >}}
+{{< carousel data="create*.png" >}}
 
 At this point, we'll change the VM definition to use the VirtIO drivers.
 
@@ -47,9 +45,7 @@ To be able to install the VirtIO drivers during setup, add a secondary optical d
 
 In Windows, we may want to use Windows Hello for login using a PIN. This requires a TPM chip, but QEMU can present one to the guest, either software emulated via swtpm, or pass /dev/tpm0 in passthrough:
 
-{{< figure src="/blog/windows_qemu/tpm1.png" >}}
-{{< figure src="/blog/windows_qemu/tpm2.png" >}}
-
+{{< carousel data="tpm*.png" >}}
 
 Not strictly necessary, but nice to have, QEMU can emulate a hardware watchdog to reboot the guest when it hangs.
 
@@ -70,8 +66,7 @@ At this point the VM starts with the Windows installation running from the optic
 
 Press the "load driver" button, and browse *E:\viostor\w10\amd64* to find the storage drivers for the virtio disk.
 
-{{< figure src="/blog/windows_qemu/storage1.png" >}}
-{{< figure src="/blog/windows_qemu/storage2.png" >}}
+{{< carousel data="storage*.png" >}}
 
 Now Windows, with the virtio storage driver loaded, detects the virtual disk we created.
 
@@ -103,8 +98,7 @@ More free space can be gained by running the cleanup tool:
 Configure it once with `cleanmgr /sageset:0` and select all the checkboxes.
 Then run it every time with `cleanmgr /sagerun:0`.
 
-{{< figure src="/blog/windows_qemu/cleanup1.png" >}}
-{{< figure src="/blog/windows_qemu/cleanup2.png" >}}
+{{< carousel data="cleanup*.png" >}}
 
 Windows update stores some backup data to rollback upgrades. Again, it's unlikely to do it since we have VM snapshots, so this data can be freed by running in an administrator command prompt:
 
