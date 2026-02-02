@@ -1,4 +1,6 @@
-<script data-goatcounter="https://stats.matteocroce.it/count" async src="/count.js"></script>
+{{ $lib := resources.GetRemote "https://gc.zgo.at/count.js" }}
+{{ $lib = $lib | resources.Copy "count.js" }}
+<script data-goatcounter="https://stats.matteocroce.it/count" async src="{{ $lib.RelPermalink }}"></script>
 <style>
 	.portrait {
 		float: right;
