@@ -6,10 +6,25 @@ theme = ['hugo-bearblog']
 enableRobotsTXT = true
 
 [menu]
-[[menu.main]]
-name = "Curriculum"
-url = "/cv.pdf"
-weight = 1
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Curriculum"
+    url = "/cv.pdf"
+    weight = 2
+
+  [[menu.main]]
+    name = "Open-source"
+    url = "/open-source/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 4
 
 [params]
 author = 'Matteo (teknoraver) Croce'
@@ -18,7 +33,5 @@ favicon = 'imgs/gear.svg'
 hideMadeWithLine = true
 images = ['imgs/matteo.jpg']
 
-[markup]
-[markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
