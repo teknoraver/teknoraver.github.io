@@ -33,5 +33,8 @@ favicon = 'imgs/gear.svg'
 hideMadeWithLine = true
 images = ['imgs/matteo.jpg']
 
+[params.social]
+twitter = 'teknoraver'
+
 [markup.goldmark.renderer]
 unsafe = true
