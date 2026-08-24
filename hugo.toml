@@ -1,5 +1,5 @@
 baseURL = 'https://matteocroce.it/'
-languageCode = 'en-US'
+locale = 'en-US'
 title = 'Matteo Croce personal homepage'
 
 theme = ['hugo-bearblog']
